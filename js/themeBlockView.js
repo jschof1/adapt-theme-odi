@@ -1,13 +1,20 @@
-import ThemeView from './themeView';
+define([
+  "./themeView",
+  "core/js/adapt"
+], function(ThemeView, Adapt) {
 
-export default class ThemeBlockView extends ThemeView {
+  var ThemeBlockView = ThemeView.extend({
 
-  className() {
-    return this.model.get('_isDividerBlock') ? 'is-divider-block' : '';
-  }
+    className: function() {
+      return this.model.get("_isDividerBlock") ? "is-divider-block" : "";
+    },
 
-  setCustomStyles() {}
+    setCustomStyles: function() {},
 
-  onRemove() {}
+    onRemove: function() {}
 
-}
+  });
+
+  return ThemeBlockView;
+
+});
