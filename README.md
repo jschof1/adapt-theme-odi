@@ -1,6 +1,6 @@
 # adapt-theme-odi-generic
 
-This theme is adapted from the adapt vanilla theme
+This theme is adapted from the adapt vanilla theme. The bower.json file version details which base version of the vanilla this theme is in sync with. Please refer to the readme and notes from vanilla for more details on features. The README here only explains what is different.
 
 ## Settings overview
 
@@ -31,3 +31,9 @@ Add to block (classes)
 	A dark color for the footer block
 * section-banner
 	Add this to a block to make a thin banner block and reduce top and bottom margins
+
+Add to component (classes)
+* mobile-hide
+	Hides a component when the view is small. Is best used on a graphic which is otherwise there onlyfor layout purposes. 
+* intro-logo
+	[GRAPHIC ONLY] - Decreases the size of the graphic and adds padding as defined in the theme variables in the logo section
