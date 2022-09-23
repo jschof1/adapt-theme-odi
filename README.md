@@ -1,4 +1,4 @@
-# adapt-theme-odi-generic
+# adapt-theme-odi
 
 This theme is adapted from the adapt vanilla theme. The bower.json file version details which base version of the vanilla this theme is in sync with. Please refer to the readme and notes from vanilla for more details on features. The README here only explains what is different.
 

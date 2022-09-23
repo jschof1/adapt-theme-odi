@@ -12,7 +12,7 @@ define([
 
   function onPostRender(view) {
     var model = view.model;
-    var theme = model.get("_odi-generic");
+    var theme = model.get("_odi-theme");
 
     if (!theme) return;
 

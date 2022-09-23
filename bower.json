@@ -1,12 +1,12 @@
 {
-    "name": "adapt-theme-odi-generic",
-    "repository": "git@github.com:theodi/adapt-theme-odi-generic.git",
+    "name": "adapt-theme-odi",
+    "repository": "git@github.com:theodi/adapt-theme-odi.git",
     "version": "7.0.1-3",
     "framework": ">=5.20.1",
-    "homepage": "https://github.com/theodi/adapt-theme-odi-generic/",
-    "issues": "https://github.com/theodi/adapt-theme-odi-generic/issues",
-    "displayName": "ODI Generic",
-    "theme": "ODI-Generic",
+    "homepage": "https://github.com/theodi/adapt-theme-odi/",
+    "issues": "https://github.com/theodi/adapt-theme-odi/issues",
+    "displayName": "ODI (theme)",
+    "theme": "ODI",
     "description": "Generic ODI eLearning template that is customisable",
     "main": "js/theme.js",
     "keywords": [
@@ -21,5 +21,5 @@
         "test",
         "tests"
     ],
-    "targetAttribute": "_odi-generic"
+    "targetAttribute": "_odi-theme"
 }

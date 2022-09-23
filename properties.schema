@@ -987,7 +987,7 @@
         "contentobject": {
           "type": "object",
           "properties": {
-            "_odi-generic": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
@@ -1159,7 +1159,7 @@
         "article": {
           "type": "object",
           "properties": {
-            "_odi-generic": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
@@ -1232,7 +1232,7 @@
         "block": {
           "type": "object",
           "properties": {
-            "_odi-generic": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
