@@ -1,11 +1,18 @@
-import ThemeView from './themeView';
+define([
+  "./themeView",
+  "core/js/adapt"
+], function(ThemeView, Adapt) {
 
-export default class ThemeArticleView extends ThemeView {
+  var ThemeArticleView = ThemeView.extend({
 
-  className() {}
+    className: function() {},
 
-  setCustomStyles() {}
+    setCustomStyles: function() {},
 
-  onRemove() {}
+    onRemove: function() {}
 
-}
+  });
+
+  return ThemeArticleView;
+
+});

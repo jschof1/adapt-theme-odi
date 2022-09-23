@@ -1,103 +1,102 @@
-import ThemeView from './themeView';
-import Adapt from 'core/js/adapt';
+define([
+  './themeView',
+  'core/js/adapt'
+], function(ThemeView, Adapt) {
 
-export default class ThemePageView extends ThemeView {
+  var ThemePageView = ThemeView.extend({
 
-  className() {}
+    className: function() {},
 
-  setCustomStyles() {
-    this.processHeader();
-  }
+    setCustomStyles: function() {
+      this.processHeader();
+    },
 
-  processHeader() {
-    const header = this.model.get('_pageHeader');
+    processHeader: function() {
+      var header = this.model.get('_pageHeader');
 
-    if (!header) return;
+      if (!header) return;
 
-    const $header = this.$('.page__header');
+      var $header = this.$('.page__header');
 
-    this.addHeaderBackgroundLayer($header);
-    this.setHeaderBackgroundImage(header, $header);
-    this.setHeaderBackgroundStyles(header, $header);
-    this.setHeaderMinimumHeight(header, $header);
-  }
+      this.setHeaderBackgroundImage(header, $header);
+      this.setHeaderBackgroundStyles(header, $header);
+      this.setHeaderMinimumHeight(header, $header);
+    },
 
-  addHeaderBackgroundLayer($header) {
-    if ($header.find(' > .background').length) return;
-    this.$headerBackground = $('<div class="background" aria-hidden="true"></div>')
-      .prependTo($header);
-  }
+    setHeaderBackgroundImage: function(config, $header) {
+      var backgroundImages = config._backgroundImage;
 
-  setHeaderBackgroundImage(config, $header) {
-    const backgroundImages = config._backgroundImage;
+      if (!backgroundImages) return;
 
-    if (!backgroundImages) return;
+      var backgroundImage;
 
-    let backgroundImage;
+      switch (Adapt.device.screenSize) {
+        case "large":
+          backgroundImage = backgroundImages._large;
+          break;
+        case "medium":
+          backgroundImage = backgroundImages._medium;
+          break;
+        default:
+          backgroundImage = backgroundImages._small;
+      }
 
-    switch (Adapt.device.screenSize) {
-      case 'large':
-        backgroundImage = backgroundImages._large;
-        break;
-      case 'medium':
-        backgroundImage = backgroundImages._medium;
-        break;
-      default:
-        backgroundImage = backgroundImages._small;
-    }
+      if (backgroundImage) {
+        $header
+          .addClass("has-bg-image")
+          .css("background-image", "url(" + backgroundImage + ")");
+      } else {
+        $header
+          .removeClass("has-bg-image")
+          .css("background-image", "");
+      }
+    },
 
-    if (backgroundImage) {
-      $header.addClass('has-bg-image');
-      this.$headerBackground
-        .css('background-image', 'url(' + backgroundImage + ')');
-      return;
-    }
+    setHeaderBackgroundStyles: function (config, $header) {
+      var styles = config._backgroundStyles;
 
-    $header.removeClass('has-bg-image');
-    this.$headerBackground.css('background-image', '');
-  }
+      if (!styles) return;
 
-  setHeaderBackgroundStyles(config, $header) {
-    const styles = config._backgroundStyles;
-    if (!styles) return;
-    this.$headerBackground
-      .css({
+      $header.css({
         'background-repeat': styles._backgroundRepeat,
         'background-size': styles._backgroundSize,
         'background-position': styles._backgroundPosition
       });
-  }
+    },
 
-  setHeaderMinimumHeight(config, $header) {
-    const minimumHeights = config._minimumHeights;
+    setHeaderMinimumHeight: function(config, $header) {
+      var minimumHeights = config._minimumHeights;
 
-    if (!minimumHeights) return;
+      if (!minimumHeights) return;
 
-    let minimumHeight;
+      var minimumHeight;
 
-    switch (Adapt.device.screenSize) {
-      case 'large':
-        minimumHeight = minimumHeights._large;
-        break;
-      case 'medium':
-        minimumHeight = minimumHeights._medium;
-        break;
-      default:
-        minimumHeight = minimumHeights._small;
-    }
+      switch (Adapt.device.screenSize) {
+        case "large":
+          minimumHeight = minimumHeights._large;
+          break;
+        case "medium":
+          minimumHeight = minimumHeights._medium;
+          break;
+        default:
+          minimumHeight = minimumHeights._small;
+      }
 
-    if (minimumHeight) {
-      $header
-        .addClass('has-min-height')
-        .css('min-height', minimumHeight + 'px');
-      return;
-    }
+      if (minimumHeight) {
+        $header
+          .addClass("has-min-height")
+          .css("min-height", minimumHeight + "px");
+      } else {
+        $header
+          .removeClass("has-min-height")
+          .css("min-height", "");
+      }
+    },
 
-    $header
-      .removeClass('has-min-height')
-      .css('min-height', '');
-  }
+    onRemove: function() {}
 
-  onRemove() {}
+  });
 
-}
+  return ThemePageView;
+
+});

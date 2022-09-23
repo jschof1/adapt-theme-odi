@@ -1,43 +1,38 @@
-import Adapt from 'core/js/adapt';
-import ThemePageView from './themePageView';
-import ThemeArticleView from './themeArticleView';
-import ThemeBlockView from './themeBlockView';
-import ThemeView from './themeView';
+define([
+  "core/js/adapt",
+  "./themePageView",
+  "./themeArticleView",
+  "./themeBlockView",
+  "./themeView"
+], function(Adapt, ThemePageView, ThemeArticleView, ThemeBlockView, ThemeView) {
 
-class Theme extends Backbone.Controller {
-
-  initialize() {
-    this.listenTo(Adapt, {
-      'app:dataReady': this.onDataReady,
-      'pageView:postRender articleView:postRender blockView:postRender': this.onPostRender
-    });
+  function onDataReady() {
+    $("html").addClass(Adapt.course.get("_courseStyle"));
   }
 
-  onDataReady() {
-    $('html').addClass(Adapt.course.get('_courseStyle'));
-  }
+  function onPostRender(view) {
+    var model = view.model;
+    var theme = model.get("_odi-theme");
 
-  onPostRender(view) {
-    const viewModel = view.model;
-    const theme = viewModel.get('_vanilla');
     if (!theme) return;
-    const model = new Backbone.Model(theme);
-    const el = view.$el;
-    switch (viewModel.get('_type')) {
-      case 'page':
-        new ThemePageView({ model, el });
+
+    switch (model.get("_type")) {
+      case "page":
+        new ThemePageView({ model: new Backbone.Model(theme), el: view.$el });
         break;
-      case 'article':
-        new ThemeArticleView({ model, el });
+      case "article":
+        new ThemeArticleView({ model: new Backbone.Model(theme), el: view.$el });
         break;
-      case 'block':
-        new ThemeBlockView({ model, el });
+      case "block":
+        new ThemeBlockView({ model: new Backbone.Model(theme), el: view.$el });
         break;
       default:
-        new ThemeView({ model, el });
+        new ThemeView({ model: new Backbone.Model(theme), el: view.$el });
     }
   }
 
-}
-
-export default new Theme();
+  Adapt.on({
+    "app:dataReady": onDataReady,
+    "pageView:postRender articleView:postRender blockView:postRender": onPostRender
+  });
+});

@@ -5,18 +5,66 @@
   "$ref": "http://localhost/plugins/content/theme/model.schema",
   "properties": {
     "variables": {
-
       "_global": {
         "type": "object",
         "required": false,
         "title": "Global",
         "properties": {
+         "max-width": {
+            "title": "Max width",
+            "help": "The maximum width of the page",
+            "type": "string",
+            "inputType": "Text",
+            "default": "1400px"
+          },
+          "device-width-small": {
+            "title": "Small device width",
+            "help": "Break point for small device layout",
+            "type": "string",
+            "inputType": "Text",
+            "default": "520px"
+          },
+          "device-width-medium": {
+            "title": "Medium device width",
+            "help": "Break point for medium size device layout",
+            "type": "string",
+            "inputType": "Text",
+            "default": "520px"
+          },
+          "device-width-large": {
+            "title": "Large device width",
+            "help": "Break point for large size device layout",
+            "type": "string",
+            "inputType": "Text",
+            "default": "900px"
+          },
+          "title-family": {
+            "title": "Font family (Title)",
+            "help": "The font family for titles",
+            "type": "string",
+            "inputType": "Text",
+            "default": "'Open Sans', Helvetica, Arial, sans-serif"
+          },
+          "body-family": {
+            "title": "Font family (Body)",
+            "help": "The font family for the body",
+            "type": "string",
+            "inputType": "Text",
+            "default": "'Open Sans', Helvetica, Arial, sans-serif"
+          },
+          "btn-family": {
+            "title": "Font family (Buttons)",
+            "help": "The font family for buttons",
+            "type": "string",
+            "inputType": "Text",
+            "default": "'Open Sans', Helvetica, Arial, sans-serif"
+          },
           "font-color": {
             "title": "Font colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#4D4D4D",
-            "help": "Global body font colour."
+            "help": "Global body font colour"
           },
           "font-color-inverted": {
             "title": "Font colour inverted",
@@ -26,48 +74,204 @@
             "help": "Global body font colour inverted. Either a lightened/darkened alternative to Font colour."
           },
           "link": {
-            "title": "Link font colour",
+            "title": "Link colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Global link font colour"
           },
           "link-inverted": {
-            "title": "Link font colour - inverted",
+            "title": "Link colour inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
             "help": "Global link font colour inverted. Either a lightened/darkened alternative to Link colour."
           },
           "link-hover": {
-            "title": "Link font colour - hover",
+            "title": "Link hover colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Global link font colour when hovered over"
           },
           "link-inverted-hover": {
-            "title": "Link font colour - inverted hover",
+            "title": "Link hover colour inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
             "help": "Global link font colour when hovered over inverted. Either a lightened/darkened alternative to Link hover colour."
-          },
-          "heading-color": {
-            "title": "Heading colour",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": "#36CDE8",
-            "help": "Global title colour."
-          },
-          "heading-color-inverted": {
-            "title": "Heading colour - inverted",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": "#FFFFFF",
-            "help": "Global title colour inverted. Either a lightened/darkened alternative to Title colour."
           }
         }
       },
-
+      "_themeLogo": {
+        "type": "object",
+        "required": false,
+        "title": "Theme logo",
+        "properties": {
+         "theme-logo-top-padding": {
+            "title": "Padding above the theme logo",
+            "help": "Often used to shunt the theme logo down to provide padding in respect to a component title",
+            "type": "string",
+            "inputType": "Text",
+            "default": "0rem"
+         },
+         "theme-logo-width": {
+            "title": "Width of the theme logo",
+            "help": "Often used to shunt the theme logo around to provide padding in respect to component text",
+            "type": "string",
+            "inputType": "Text",
+            "default": "100%"
+         }
+        }
+      },
+      "_colors": {
+        "type": "object",
+        "required": false,
+        "title": "Colours",
+        "properties": {
+          "color-one": {
+            "title": "Colour one",
+            "help": "This is the primary colour used to style the course, and is applied to component items and pop-up notifications.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#3099FF"
+          },
+          "color-one-inverted": {
+            "title": "Colour one inverted",
+            "help": "Inverted color one, used for components (e.g. buttons) that sit on top of something shaded in colour one",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-two": {
+            "title": "Colour two",
+            "help": "This is the secondary colour used to style the course, and is typically applied to buttons.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#666666"
+          },
+          "color-two-inverted": {
+            "title": "Colour two inverted",
+            "help": "Inverted color two, used for components (e.g. buttons) that sit on top of something shaded in colour two",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-three": {
+            "title": "Colour three",
+            "help": "This is the tertiary colour used to style the course.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#7d82be"
+          },
+          "color-three-inverted": {
+            "title": "Colour three inverted",
+            "help": "Inverted color three, used for components (e.g. buttons) that sit on top of something shaded in colour three",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-four": {
+            "title": "Colour four",
+            "help": "A fourth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ff9000"
+          },
+          "color-four-inverted": {
+            "title": "Colour four Inverted",
+            "help": "This is the inverted fourth colour, and is applied to text that is displayed on elements coloured with colour four.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-five": {
+            "title": "Colour five",
+            "help": "A fifth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#de4a8d"
+          },
+          "color-five-inverted": {
+            "title": "Colour five Inverted",
+            "help": "This is the inverted fifth colour, and is applied to text that is displayed on elements coloured with colour five.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-six": {
+            "title": "Colour six",
+            "help": "A sixth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ff6600"
+          },
+          "color-six-inverted": {
+            "title": "Colour six Inverted",
+            "help": "This is the inverted sixth colour, and is applied to text that is displayed on elements coloured with colour six.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-seven": {
+            "title": "Colour seven",
+            "help": "A seventh theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#333666"
+          },
+          "color-seven-inverted": {
+            "title": "Colour seven Inverted",
+            "help": "This is the inverted seventh colour, and is applied to text that is displayed on elements coloured with colour seven.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-eight": {
+            "title": "Colour eight",
+            "help": "An eigth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#006699"
+          },
+          "color-eight-inverted": {
+            "title": "Colour eight Inverted",
+            "help": "This is the inverted eigth colour, and is applied to text that is displayed on elements coloured with colour eight.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-nine": {
+            "title": "Colour nine",
+            "help": "A ninth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#006633"
+          },
+          "color-nine-inverted": {
+            "title": "Colour nine Inverted",
+            "help": "This is the inverted ninth colour, and is applied to text that is displayed on elements coloured with colour nine.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          },
+          "color-ten": {
+            "title": "Colour ten",
+            "help": "A tenth theme colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#000000"
+          },
+          "color-ten-inverted": {
+            "title": "Colour ten Inverted",
+            "help": "This is the inverted tenth colour, and is applied to text that is displayed on elements coloured with colour ten.",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff"
+          }
+        }
+      },
+      
       "_items": {
         "type": "object",
         "required": false,
@@ -78,54 +282,56 @@
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#36CDE8",
-            "help": "Defines the clickable areas or points of interest in components."
+            "help": "Item background colour"
           },
           "item-color-inverted": {
             "title": "Item colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Item text / icon colour. Should be a colour that provides good contrast against the Item colour."
+            "help": "Item foreground colour"
           },
           "item-color-hover": {
             "title": "Item colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Item background colour when hovered over"
           },
           "item-color-inverted-hover": {
             "title": "Item colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Item text / icon colour when hovered over. Should be a colour that provides good contrast against the Item hover colour."
+            "help": "Item foreground colour when hovered over"
           },
           "item-color-selected": {
             "title": "Item colour - selected",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Item background colour when selected"
           },
           "item-color-inverted-selected": {
             "title": "Item colour - inverted selected",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Item text / icon colour when selected. Should be a colour that provides good contrast against the Item selected colour."
+            "help": "Item foreground colour when selected"
           },
           "visited": {
             "title": "Visited colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#727272",
-            "help": "Defines the Item colour when it has been visited."
+            "help": "Item visited background colour"
           },
           "visited-inverted": {
             "title": "Visited colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Item text / icon colour when visited. Should be a colour that provides good contrast against the Item visited colour."
+            "help": "Item visited foreground colour"
           }
         }
       },
@@ -140,67 +346,42 @@
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#4D4D4D",
-            "help": "Defines component question buttons and navigational elements."
+            "help": "Question button background colour"
           },
           "btn-color-inverted": {
             "title": "Button colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the button text / icon colour. Should be a colour that provides good contrast against the button colour."
+            "help": "Question button foreground colour"
           },
           "btn-color-hover": {
             "title": "Button colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Question button background colour when hovered over"
           },
           "btn-color-inverted-hover": {
             "title": "Button colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the button text / icon colour when hovered over. Should be a colour that provides good contrast against the button hover colour."
-          },
-          "btn-icon-color": {
-            "title": "Button icon colour",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the standardised icon button background colour."
-          },
-          "btn-icon-color-inverted": {
-            "title": "Button icon colour - inverted",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the button icon colour. Should be a colour that provides good contrast against the button colour."
-          },
-          "btn-icon-color-hover": {
-            "title": "Button icon colour - hover",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": ""
-          },
-          "btn-icon-color-inverted-hover": {
-            "title": "Button icon colour - inverted hover",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the button icon colour when hovered over. Should be a colour that provides good contrast against the button hover colour."
+            "help": "Question button foreground colour when hovered over"
           },
           "disabled": {
             "title": "Disabled colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#DDDDDD"
+            "default": "#DDDDDD",
+            "help": "Question button disabled background colour"
           },
           "disabled-inverted": {
             "title": "Disabled colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#000000",
-            "help": "Defines the button text / icon colour when it is disabled. Should be a colour that provides good contrast against the button disabled colour."
+            "help": "Question button disabled foreground colour"
           }
         }
       },
@@ -215,28 +396,28 @@
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#065f28",
-            "help": "Defines the question marking success colour."
+            "help": "Question marking success background colour"
           },
           "validation-success-inverted": {
             "title": "Validation success colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the question marking success text / icon colour. Should be a colour that provides good contrast against the question marking success colour."
+            "help": "Question marking success foreground colour"
           },
           "validation-error": {
             "title": "Validation error colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#ff0000",
-            "help": "Defines the question marking error colour."
+            "help": "Question marking error background colour"
           },
           "validation-error-inverted": {
             "title": "Validation error colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the question marking error text / icon colour. Should be a colour that provices good contrast against the question marking error colour."
+            "help": "Question marking error foreground colour"
           }
         }
       },
@@ -247,25 +428,25 @@
         "title": "Progress",
         "properties": {
           "progress": {
-            "title": "Progress fill colour",
+            "title": "Progress colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#9096A0",
-            "help": "Defines the global progress width fill colour."
+            "help": "Global progress fill colour"
           },
           "progress-inverted": {
-            "title": "Progress background colour",
+            "title": "Progress colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the global progress fill background colour."
+            "help": "Global progress background colour"
           },
           "progress-border": {
             "title": "Progress border colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#9096A0",
-            "help": "Defines the global border colour that appears around the progress fill bar."
+            "help": "Global progress border colour"
           }
         }
       },
@@ -276,17 +457,16 @@
         "title": "Menu",
         "properties": {
           "menu-item": {
-            "title": "Menu item colour",
+            "title": "Menu item background colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": ""
           },
           "menu-item-inverted": {
-            "title": "Menu item colour - inverted",
+            "title": "Menu item foreground colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Menu Item text colour. Should be a colour that provides good contrast against the Menu Item colour."
+            "default": ""
           },
           "menu-item-border-color": {
             "title": "Menu item border colour",
@@ -298,15 +478,13 @@
             "title": "Menu item progress fill colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Menu Item specific global progress width fill override colour."
+            "default": ""
           },
           "menu-item-progress-inverted": {
             "title": "Menu item progress background colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Menu Item specific global progress fill background override colour."
+            "default": ""
           },
           "menu-item-progress-border": {
             "title": "Menu item progress border colour",
@@ -321,24 +499,22 @@
             "default": ""
           },
           "menu-item-btn-color-inverted": {
-            "title": "Menu item button background colour - inverted",
+            "title": "Menu item button foreground colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Menu Item button text colour. Should be a colour that provides good contrast against the Menu Item button colour."
+            "default": ""
           },
           "menu-item-btn-color-hover": {
-            "title": "Menu item button background colour - hover",
+            "title": "Menu item button background hover colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": ""
           },
           "menu-item-btn-color-inverted-hover": {
-            "title": "Menu item button background colour - inverted hover",
+            "title": "Menu item button foreground hover colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Menu Item button text colour when hovered over. Should be a colour that provides good contrast against the Menu Item button hover colour."
+            "default": ""
           }
         }
       },
@@ -349,168 +525,267 @@
         "title": "Navigation",
         "properties": {
           "nav": {
-            "title": "Navigation background colour",
+            "title": "Nav colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#FFFFFF"
+            "default": "#000000",
+            "help": "Navigation background colour"
           },
           "nav-inverted": {
-            "title": "Navigation background colour - inverted",
+            "title": "Nav colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#9096A0",
-            "help": "Defines the general Navigation inverted colour. Should be a colour that provides good contrast against the Navigation colour."
+            "default": "#ffffff",
+            "help": "Navigation foreground colour"
+          },
+          "hide-nav": {
+            "title": "Hide navigation icons?",
+            "help": "Tick this to hide the navigation icons, used in single page courses.",
+            "type": "boolean",
+            "inputType": "Boolean",
+            "default": false
           },
           "nav-icon": {
-            "title": "Navigation button background colour",
+            "title": "Nav icon colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "#000000",
+            "help": "Navigation icon background colour"
           },
           "nav-icon-inverted": {
-            "title": "Navigation button background colour - inverted",
+            "title": "Nav icon colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Navigation Btn text / icon colour. Should be a colour that provides good contrast against the Navigation Btn colour."
+            "default": "#ffffff",
+            "help": "Navigation icon foreground colour"
           },
           "nav-icon-hover": {
-            "title": "Navigation button background colour - hover",
+            "title": "Nav icon colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "#000000",
+            "help": "Navigation icon background colour when hovered over"
           },
           "nav-icon-inverted-hover": {
-            "title": "Navigation button background colour - inverted hover",
+            "title": "Nav icon colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "",
-            "help": "Defines the Navigation button text / icon colour when hovered over. Should be a colour that provides good contrast against the Navigation button hover colour."
+            "default": "#ffffff",
+            "help": "Navigation icon foreground colour when hovered over"
           },
+          "navigation-logo": {
+              "title": "Nav bar logo",
+              "help": "This is the logo image, it will be displayed in the top left of the navigation bar.",
+              "type": "string",
+              "inputType": "Asset:image",
+              "default": "",
+              "validators": []
+            },
+            "nav-logo-height": {
+              "title": "Navigation logo height",
+              "help": "The height of the navigation logo",
+              "type": "string",
+              "inputType": "Text",
+              "default": "60px"
+            },
+            "nav-logo-height-mobile": {
+              "title": "Navigation logo height (mobile)",
+              "help": "The height of the navigation logo on small screens",
+              "type": "string",
+              "inputType": "Text",
+              "default": "50px"
+            },
+            "nav-logo-padding-top": {
+              "title": "Navigation logo top padding",
+              "help": "The padding above the navigation logo",
+              "type": "string",
+              "inputType": "Text",
+              "default": "5px"
+            },
+            "nav-logo-padding-top-mobile": {
+              "title": "Navigation logo top padding (mobile)",
+              "help": "he padding above the navigation logo on small screens",
+              "type": "string",
+              "inputType": "Text",
+              "default": "3px"
+            },
+            "nav-logo-padding-left": {
+              "title": "Navigation logo left padding",
+              "help": "The padding to the left the navigation logo",
+              "type": "string",
+              "inputType": "Text",
+              "default": "5px"
+            },
+            "nav-logo-padding-left-mobile": {
+              "title": "Navigation logo left padding (mobile)",
+              "help": "he padding to the left the navigation logo on small screens",
+              "type": "string",
+              "inputType": "Text",
+              "default": "3px"
+            },
           "nav-progress": {
-            "title": "Navigation progress fill color",
+            "title": "Nav progress",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Navigation specific progress width fill override colour."
+            "help": "Navigation progress fill colour"
           },
           "nav-progress-inverted": {
-            "title": "Navigation progress background color - inverted",
+            "title": "Nav progress - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Navigation specific progress fill background override colour."
+            "help": "Navigation progress background colour"
           },
           "nav-progress-border": {
-            "title": "Navigation progress border colour",
+            "title": "Nav progress border colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Navigation progress border colour"
           },
           "nav-progress-hover": {
-            "title": "Navigation progress fill color - hover",
+            "title": "Nav progress - hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Navigation specific progress width fill override colour when hovered over."
+            "help": "Navigation progress fill colour when hovered over"
           },
           "nav-progress-inverted-hover": {
-            "title": "Navigation progress background color - inverted hover",
+            "title": "Nav progress - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Navigation specific progress fill background override colour when hovered over."
+            "help": "Navigation progress background colour when hovered over"
           },
           "nav-progress-border-hover": {
-            "title": "Navigation progress border colour - hover",
+            "title": "Nav progress border colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Navigation progress border colour when hovered over"
           }
         }
       },
 
+      "_footer": {
+        "type": "object",
+        "required": false,
+        "title": "Footer",
+        "properties": {
+          "footer": {
+            "title": "Footer colour",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#000000",
+            "help": "Footer background colour"
+          },
+          "footer-inverted": {
+            "title": "Footer colour - inverted",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "#ffffff",
+            "help": "Footer foreground colour"
+          },
+          "footer-logo": {
+            "title": "Footer bar logo",
+            "help": "This is the logo image, it will be displayed in the left of the footer block.",
+            "type": "string",
+            "inputType": "Asset:image",
+            "default": "",
+            "validators": []
+          }
+        }
+      },
+      
       "_notify": {
         "type": "object",
         "required": false,
-        "title": "Notify (pop up)",
+        "title": "Notify",
         "properties": {
           "notify": {
-            "title": "Notify background colour",
+            "title": "Notify colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#36CDE8"
+            "default": "#36CDE8",
+            "help": "Notify background colour"
           },
           "notify-inverted": {
-            "title": "Notify background colour - inverted",
+            "title": "Notify colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Notify text colour. Should be a colour that provides good contrast against the Notify colour."
+            "help": "Notify foreground colour"
           },
           "notify-link": {
-            "title": "Notify link font colour",
+            "title": "Notify link colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Notify link font colour"
           },
           "notify-link-hover": {
-            "title": "Notify link font colour - hover",
+            "title": "Notify link colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Notify link font colour when hovered over"
           },
           "notify-btn": {
-            "title": "Notify button background colour",
+            "title": "Notify button colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Notify button background colour"
           },
           "notify-btn-inverted": {
-            "title": "Notify button background colour - inverted",
+            "title": "Notify button colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Notify button text / icon colour. Should be a colour that provides good contrast against the Notify button colour."
+            "help": "Notify button foreground colour"
           },
           "notify-btn-hover": {
-            "title": "Notify button background colour - hover",
+            "title": "Notify button colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Notify button backgroound colour when hovered over"
           },
           "notify-btn-inverted-hover": {
-            "title": "Notify button background colour - inverted hover",
+            "title": "Notify button colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Notify button text / icon colour when hovered over. Should be a colour that provides good contrast against the Notify button hover colour."
+            "help": "Notify button foreground colour when hovered over"
           },
           "notify-icon": {
-            "title": "Notify icon button background colour",
+            "title": "Notify icon colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Notify icon background colour"
           },
           "notify-icon-inverted": {
-            "title": "Notify icon button background colour - inverted",
+            "title": "Notify icon colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Notify Icon inverse colour. Should be a colour that provides good contrast against the Notify Icon colour."
+            "help": "Notify icon foreground colour"
           },
           "notify-icon-hover": {
-            "title": "Notify icon button background colour - hover",
-            "type": "string",
-            "inputType": "ColourPicker",
-            "default": ""
-          },
-          "notify-icon-inverted-hover": {
-            "title": "Notify icon button background colour - inverted hover",
+            "title": "Notify icon colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Notify Icon colour when hovered over. Should be a colour that provides good contrast against the Notify Icon colour."
+            "help": "Notify icon background colour when hovered over"
+          },
+          "notify-icon-inverted-hover": {
+            "title": "Notify icon colour - inverted hover",
+            "type": "string",
+            "inputType": "ColourPicker",
+            "default": "",
+            "help": "Notify icon foregroound colour when hovered over"
           }
         }
       },
@@ -521,136 +796,144 @@
         "title": "Drawer",
         "properties": {
           "drawer": {
-            "title": "Drawer background colour",
+            "title": "Drawer colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#263944"
+            "default": "#263944",
+            "help": "Drawer background colour"
           },
           "drawer-inverted": {
-            "title": "Drawer background colour - inverted",
+            "title": "Drawer colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Drawer text colour. Should be a colour that provides good contrast against the Drawer colour."
+            "help": "Drawer foreground colour"
           },
           "drawer-link": {
-            "title": "Drawer link font colour",
+            "title": "Drawer link colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer link font colour"
           },
           "drawer-link-hover": {
-            "title": "Drawer link font colour - hover",
+            "title": "Drawer link colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer link font colour when hovered over"
           },
           "drawer-icon": {
-            "title": "Drawer icon button background colour",
+            "title": "Drawer icon colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer icon background colour"
           },
           "drawer-icon-inverted": {
-            "title": "Drawer icon button background colour - inverted",
+            "title": "Drawer icon colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer Icon button inverse colour. Should be a colour that provides good contrast against the Drawer Icon button colour"
+            "help": "Drawer icon foreground colour"
           },
           "drawer-icon-hover": {
-            "title": "Drawer icon button background colour - hover",
+            "title": "Drawer icon colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer icon background colour when hovered over"
           },
           "drawer-icon-inverted-hover": {
-            "title": "Drawer icon button background colour - inverted hover",
+            "title": "Drawer icon colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer Icon button inverse colour when hovered over. Should be a colour that provides good contrast against the Drawer Icon button hover colour."
+            "help": "Drawer icon foreground colour when hovered over"
           },
           "drawer-item": {
-            "title": "Drawer item background colour",
+            "title": "Drawer item colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer item background colour"
           },
           "drawer-item-inverted": {
-            "title": "Drawer item background colour - inverted",
+            "title": "Drawer item colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer Item text / icon colour. Should be a colour that provides good contrast against the Drawer Item colour."
+            "help": "Drawer item foreground colour"
           },
           "drawer-item-hover": {
-            "title": "Drawer item background colour - hover",
+            "title": "Drawer item colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer item background colour when hovered over"
           },
           "drawer-item-inverted-hover": {
-            "title": "Drawer item background colour - inverted hover",
+            "title": "Drawer item colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer Item text / icon colour when hovered over. Should be a colour that provides good contrast against the Drawer Item hover colour."
+            "help": "Drawer item foreground colour when hovered over"
           },
           "drawer-item-selected": {
-            "title": "Drawer item background colour - selected",
+            "title": "Drawer item colour - selected",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": ""
+            "default": "",
+            "help": "Drawer item background colour when selected"
           },
           "drawer-item-inverted-selected": {
-            "title": "Drawer item background colour - inverted selected",
+            "title": "Drawer item colour - inverted selected",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer Item text / icon colour when selected. Should be a colour that provides good contrast against the Drawer Item selected colour."
+            "help": "Drawer item foreground colour when selected"
           },
           "drawer-progress": {
-            "title": "Drawer progress fill colour",
+            "title": "Drawer progress colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific progress width fill override colour."
+            "help": "Drawer progress fill colour"
           },
           "drawer-progress-inverted": {
-            "title": "Drawer progress background colour",
+            "title": "Drawer progress colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific progress fill background override colour."
+            "help": "Drawer progress background colour"
           },
           "drawer-progress-border": {
             "title": "Drawer progress border colour",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific border override colour that appears around the progress fill bar."
+            "help": "Drawer progress border colour"
           },
           "drawer-progress-hover": {
             "title": "Drawer progress colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific progress width fill override colour when hovered over."
+            "help": "Drawer progress fill colour when hovered over"
           },
           "drawer-progress-inverted-hover": {
             "title": "Drawer progress colour - inverted hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific progress fill background override colour when hovered over."
+            "help": "Drawer progress backgroud colour when hovered over"
           },
           "drawer-progress-border-hover": {
             "title": "Drawer progress border colour - hover",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "",
-            "help": "Defines the Drawer-specific border override colour that appears around the progress fill bar when hovered over."
+            "help": "Drawer progress border colour when hovered over"
           }
         }
       },
@@ -665,27 +948,28 @@
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#000000",
-            "help": "Sets the generic Background colour. "
+            "help": ""
           },
           "background-inverted": {
             "title": "Background colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Background text / icon colour. Should be a colour that provides good contrast against the Background colour."
+            "help": ""
           },
           "shadow": {
-            "title": "Shadow background colour (loading / pop up background)",
+            "title": "Shadow colour",
             "type": "string",
             "inputType": "ColourPicker",
-            "default": "#000000"
+            "default": "#000000",
+            "help": ""
           },
           "shadow-inverted": {
-            "title": "Shadow background colour - inverted",
+            "title": "Shadow colour - inverted",
             "type": "string",
             "inputType": "ColourPicker",
             "default": "#FFFFFF",
-            "help": "Defines the Shadow text / icon colour. Should be a colour that provides good contrast against the Shadow colour."
+            "help": ""
           }
         }
       }
@@ -703,7 +987,7 @@
         "contentobject": {
           "type": "object",
           "properties": {
-            "_vanilla": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
@@ -755,9 +1039,9 @@
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
+                      "inputType": {"type":"Select", "options":["auto","cover","contain"]},
                       "title": "Set the size of the background image",
-                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
+                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible."
                     },
                     "_backgroundPosition": {
                       "type": "string",
@@ -766,37 +1050,6 @@
                       "inputType": {"type":"Select", "options":["left top","left center","left bottom","center top","center center","center bottom","right top","right center","right bottom"]},
                       "title": "Set the position of the background image",
                       "help": "The first value is the horizontal position and the second value is the vertical."
-                    }
-                  }
-                },
-                "_responsiveClasses": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Responsive classes",
-                  "properties": {
-                    "_large": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Large CSS class - used on desktop"
-                    },
-                    "_medium": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Medium CSS class - used on tablet"
-                    },
-                    "_small": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Small CSS class - used on mobile"
                     }
                   }
                 },
@@ -852,9 +1105,9 @@
                           "type": "string",
                           "required": false,
                           "default": "",
-                          "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
+                          "inputType": {"type":"Select", "options":["auto","cover","contain"]},
                           "title": "Set the size of the background image",
-                          "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
+                          "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible."
                         },
                         "_backgroundPosition": {
                           "type": "string",
@@ -906,7 +1159,7 @@
         "article": {
           "type": "object",
           "properties": {
-            "_vanilla": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
@@ -958,9 +1211,9 @@
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
+                      "inputType": {"type":"Select", "options":["auto","cover","contain"]},
                       "title": "Set the size of the background image",
-                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
+                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible."
                     },
                     "_backgroundPosition": {
                       "type": "string",
@@ -971,37 +1224,6 @@
                       "help": "The first value is the horizontal position and the second value is the vertical."
                     }
                   }
-                },
-                "_responsiveClasses": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Responsive classes",
-                  "properties": {
-                    "_large": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Large CSS class - used on desktop"
-                    },
-                    "_medium": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Medium CSS class - used on tablet"
-                    },
-                    "_small": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Small CSS class - used on mobile"
-                    }
-                  }
                 }
               }
             }
@@ -1010,7 +1232,7 @@
         "block": {
           "type": "object",
           "properties": {
-            "_vanilla": {
+            "_odi-theme": {
               "type": "object",
               "required": false,
               "properties": {
@@ -1062,9 +1284,9 @@
                       "type": "string",
                       "required": false,
                       "default": "",
-                      "inputType": {"type":"Select", "options":["auto","cover","contain","100% 100%"]},
+                      "inputType": {"type":"Select", "options":["auto","cover","contain"]},
                       "title": "Set the size of the background image",
-                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible. 100% 100%: Resize the background image to match the dimensions of the container."
+                      "help": "Auto: The background image is displayed in its original size. Cover: Resize the background image to cover the entire container, even if it has to stretch or crop the image. Contain: Resize the background image to make sure the image is fully visible."
                     },
                     "_backgroundPosition": {
                       "type": "string",
@@ -1104,37 +1326,6 @@
                       "inputType": "Number",
                       "validators": ["number"],
                       "help": "Minimum height should only be used in instances where the block height needs to be greater than the content e.g. to prevent a background image being cropped"
-                    }
-                  }
-                },
-                "_responsiveClasses": {
-                  "type": "object",
-                  "required": false,
-                  "legend": "Responsive classes",
-                  "properties": {
-                    "_large": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Large CSS class - used on desktop"
-                    },
-                    "_medium": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Medium CSS class - used on tablet"
-                    },
-                    "_small": {
-                      "type": "string",
-                      "required": false,
-                      "default": "",
-                      "inputType": "Text",
-                      "validators": [],
-                      "help": "Small CSS class - used on mobile"
                     }
                   }
                 },
