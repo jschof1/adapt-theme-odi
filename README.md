@@ -2,6 +2,10 @@
 
 This theme is adapted from the adapt vanilla theme. The bower.json file version details which base version of the vanilla this theme is in sync with. Please refer to the readme and notes from vanilla for more details on features. The README here only explains what is different.
 
+# Installing
+
+Note that there is a themepreset.json file in the root directory which can be imported into the themepresets table of the adapt authoring tool database in order to set the colours etc. There is currently no way to do this using the authoring tool interface.
+
 ## Settings overview
 
 This theme provides a maximum width theme that is responsive over mobile and desktop themes.

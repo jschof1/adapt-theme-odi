@@ -1,0 +1,159 @@
+{
+    "_isDeleted" : false,
+    "displayName" : "ODI",
+    "parentTheme" : "ODI",
+    "properties" : {
+        "_global" : {
+            "max-width" : "1200px",
+            "device-width-small" : "520px",
+            "device-width-medium" : "900px",
+            "device-width-large" : "1024px",
+            "title-family" : "'Open Sans', Helvetica, Arial, sans-serif",
+            "body-family" : "'Open Sans', Helvetica, Arial, sans-serif",
+            "btn-family" : "'Open Sans', Helvetica, Arial, sans-serif",
+            "font-color" : "#4d4d4d",
+            "font-color-inverted" : "#ffffff",
+            "link" : "",
+            "link-inverted" : "",
+            "link-hover" : "",
+            "link-inverted-hover" : ""
+        },
+        "_themeLogo" : {
+            "theme-logo" : "course/assets/f64ad121fc8e0250264e5d5f00c90d78cd6271a0.png",
+            "theme-logo-top-padding" : "0rem",
+            "theme-logo-width" : "75%"
+        },
+        "_colors" : {
+            "color-one" : "#00b6ff",
+            "color-one-inverted" : "#ffffff",
+            "color-two" : "#f9bc26",
+            "color-two-inverted" : "#ffffff",
+            "color-three" : "#ff6700",
+            "color-three-inverted" : "#ffffff",
+            "color-four" : "#0dbc37",
+            "color-four-inverted" : "#ffffff",
+            "color-five" : "#722ea5",
+            "color-five-inverted" : "#ffffff",
+            "color-six" : "#2254f4",
+            "color-six-inverted" : "#ffffff",
+            "color-seven" : "#d60303",
+            "color-seven-inverted" : "#ffffff",
+            "color-eight" : "#ef3aab",
+            "color-eight-inverted" : "#ffffff",
+            "color-nine" : "#e6007c",
+            "color-nine-inverted" : "#ffffff",
+            "color-ten" : "#1dd3a7",
+            "color-ten-inverted" : "#ffffff"
+        },
+        "_items" : {
+            "item-color" : "#00b6ff",
+            "item-color-inverted" : "#ffffff",
+            "item-color-hover" : "",
+            "item-color-inverted-hover" : "",
+            "item-color-selected" : "",
+            "item-color-inverted-selected" : "",
+            "visited" : "#333333",
+            "visited-inverted" : "#ffffff"
+        },
+        "_buttons" : {
+            "btn-color" : "#333333",
+            "btn-color-inverted" : "#ffffff",
+            "btn-color-hover" : "",
+            "btn-color-inverted-hover" : "",
+            "disabled" : "#dddddd",
+            "disabled-inverted" : "#000000"
+        },
+        "_validation" : {
+            "validation-success" : "#0dbc37",
+            "validation-success-inverted" : "#ffffff",
+            "validation-error" : "#d60303",
+            "validation-error-inverted" : "#ffffff"
+        },
+        "_progress" : {
+            "progress" : "#333333",
+            "progress-inverted" : "#ffffff",
+            "progress-border" : "#333333"
+        },
+        "_menu" : {
+            "menu-item" : "#00b6ff",
+            "menu-item-inverted" : "#ffffff",
+            "menu-item-border-color" : "#00b6ff",
+            "menu-item-progress" : "#00b6ff",
+            "menu-item-progress-inverted" : "#ffffff",
+            "menu-item-progress-border" : "#ffffff",
+            "menu-item-btn-color" : "#ffffff",
+            "menu-item-btn-color-inverted" : "#00b6ff",
+            "menu-item-btn-color-hover" : "#333333",
+            "menu-item-btn-color-inverted-hover" : "#ffffff"
+        },
+        "_nav" : {
+            "nav" : "#333333",
+            "nav-inverted" : "#ffffff",
+            "hide-nav" : false,
+            "nav-icon" : "#ffffff",
+            "nav-icon-inverted" : "#ffffff",
+            "nav-icon-hover" : "#ffffff",
+            "nav-icon-inverted-hover" : "#ffffff",
+            "navigation-logo" : "",
+            "nav-logo-height" : "60px",
+            "nav-logo-height-mobile" : "50px",
+            "nav-logo-padding-top" : "5px",
+            "nav-logo-padding-top-mobile" : "3px",
+            "nav-logo-padding-left" : "5px",
+            "nav-logo-padding-left-mobile" : "3px",
+            "nav-progress" : "",
+            "nav-progress-inverted" : "",
+            "nav-progress-border" : "",
+            "nav-progress-hover" : "",
+            "nav-progress-inverted-hover" : "",
+            "nav-progress-border-hover" : ""
+        },
+        "_footer" : {
+            "footer" : "#333333",
+            "footer-inverted" : "#ffffff",
+            "footer-logo" : "course/assets/f9855a4bc775449c566dabcd78c05fde759d0689.png"
+        },
+        "_notify" : {
+            "notify" : "#333333",
+            "notify-inverted" : "#ffffff",
+            "notify-link" : "",
+            "notify-link-hover" : "",
+            "notify-btn" : "",
+            "notify-btn-inverted" : "",
+            "notify-btn-hover" : "",
+            "notify-btn-inverted-hover" : "",
+            "notify-icon" : "",
+            "notify-icon-inverted" : "",
+            "notify-icon-hover" : "",
+            "notify-icon-inverted-hover" : ""
+        },
+        "_drawer" : {
+            "drawer" : "#333333",
+            "drawer-inverted" : "#ffffff",
+            "drawer-link" : "",
+            "drawer-link-hover" : "",
+            "drawer-icon" : "",
+            "drawer-icon-inverted" : "",
+            "drawer-icon-hover" : "",
+            "drawer-icon-inverted-hover" : "",
+            "drawer-item" : "",
+            "drawer-item-inverted" : "",
+            "drawer-item-hover" : "",
+            "drawer-item-inverted-hover" : "",
+            "drawer-item-selected" : "",
+            "drawer-item-inverted-selected" : "",
+            "drawer-progress" : "",
+            "drawer-progress-inverted" : "",
+            "drawer-progress-border" : "",
+            "drawer-progress-hover" : "",
+            "drawer-progress-inverted-hover" : "",
+            "drawer-progress-border-hover" : ""
+        },
+        "_misc" : {
+            "background" : "#333333",
+            "background-inverted" : "#ffffff",
+            "shadow" : "#333333",
+            "shadow-inverted" : "#ffffff"
+        }
+    }
+}
