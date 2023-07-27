@@ -35,6 +35,14 @@ define([
       addNewTabMessage(link);
     });
 
+    Array.from(document.querySelectorAll('a[name]')).filter(link => /\.[^.]+$/.test(link.getAttribute('name'))).forEach(link => {
+      addDownload(link);
+    });
+
+  }
+
+  function addDownload(link) {
+    link.setAttribute('download', link.getAttribute('name'));
   }
 
   function addNoOpener(link) {
