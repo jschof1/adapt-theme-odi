@@ -29,7 +29,10 @@ define([
       default:
         new ThemeView({ model: new Backbone.Model(theme), el: view.$el });
     }
+    updateLinks();
+  }
 
+  function updateLinks() {
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
       addNoOpener(link);
       addNewTabMessage(link);
@@ -38,7 +41,6 @@ define([
     Array.from(document.querySelectorAll('a[name]')).filter(link => /\.[^.]+$/.test(link.getAttribute('name'))).forEach(link => {
       addDownload(link);
     });
-
   }
 
   function addDownload(link) {
@@ -71,6 +73,7 @@ define([
 
   Adapt.on({
     'app:dataReady': onDataReady,
-    'pageView:postRender articleView:postRender blockView:postRender': onPostRender
+    'pageView:postRender articleView:postRender blockView:postRender': onPostRender,
+    'tutor:opened': updateLinks
   });
 });
