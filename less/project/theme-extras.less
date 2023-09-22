@@ -21,10 +21,74 @@ b, strong {
 	font-weight: bold;
 }
 
+table {
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px !important;
+}
+.tabs {
+	p {
+		font-size: 0.9em;
+	}
+}
+
+table th,
+table td {
+  padding: 1em;
+  text-align: left;
+}
+
+table th {
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.25em;
+    border: none;
+  }
+
+  table td {
+    display: block;
+    border: none;
+  }
+
+  table td:first-child {
+    margin-top: 0.5em;
+    font-weight: normal;
+  }
+
+  table td:last-child {
+    margin-bottom: 0.5em;
+  }
+
+  table th, table td {
+    border-radius: 5px;
+	}
+}
+
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: @max-width;
+	padding-top: 0px;
+}
+html.is-nav-top #wrapper {
 	padding-top: 0px;
 }
 .o_page__background {
@@ -62,6 +126,7 @@ b, strong {
 	height: @nav-logo-height;
 	&__inner {
 		height: inherit;
+		display: block;
 	}
 	&__btn {
 		background-color: @nav;
@@ -81,6 +146,15 @@ b, strong {
 	}
 	&__home-btn .icon {
 	   .icon-home;
+	}
+	&__pagelevelprogress-btn {
+		float: right;
+	}
+	&__devtools-btn {
+		float: right;
+	}
+	&__drawer-btn {
+		float: right;
 	}
 }
 
@@ -183,6 +257,7 @@ blockquote {
 }
 
 .has-attribution {
+	position: inherit;
 	overflow: hidden;
 	.component__attribution {
 		overflow: hidden;
@@ -254,6 +329,15 @@ a {
 	margin-bottom: 10px;
 }
 
+.list-with-paragraph {
+	li p {
+			border-left: 5px solid white;
+			position: relative;
+			left: -1rem;
+			padding-left: 1rem;
+	}
+}
+
 .navigation {
 	img.navigation-logo {
 		content: url("@{navigation-logo}");
@@ -266,6 +350,32 @@ a {
 			padding-top: @nav-logo-padding-top-mobile;
 			padding-left: @nav-logo-padding-left-mobile;
 		}
+	}
+}
+
+.selectchoice {
+	&__item {
+		color: black;
+		display:block !important;
+		align-items: center;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+	&__item:not(.selectchoice__item-head) .selectchoice__item-choice-text {
+		display: block !important;
+	}
+
+	&__item-choices {
+		font-weight: bold;
+		padding-top: 10px !important;
+	}
+	&__item-head {
+		display: none !important;
+	}
+	&__item-text {
+		border-bottom: 2px solid black;
+		padding-bottom: 20px;
+		font-weight: 500;
 	}
 }
 
@@ -384,6 +494,12 @@ a {
 	.component__title {
 		color: @font-color;
 	}
+
+	.list-with-paragraph {
+		li p {
+				border-left: 5px solid @color;
+		}
+	}
 	.narrative {
 		&__content {
 			background-color: @color;
@@ -421,6 +537,7 @@ a {
 		&-item__btn {
 			border-radius: 0px;
 			background-color: @color;
+			color: @color-inverted;
 			.no-touch & {
 				&:hover {
 					background-color: darken(@color, 20%);
@@ -441,6 +558,7 @@ a {
 	}
 	.mcq-item {
 		label {
+			color: @color-inverted;
 			background-color: @color;
 			border-radius: 0px;
 			.no-touch & {
@@ -515,8 +633,39 @@ a {
     .component__title {
 		color: @color-inverted;
 	}
+	.tabs {
+		&__content {
+			box-shadow: none;
+			color: black;
+		}
+		&__nav-item-btn {
+			background-color: @item-color-inverted;
+			color: @item-color;
+
+			.no-touch &:not(.is-selected):hover {
+				color: @item-color-hover;
+				background-color: @item-color-inverted-hover;
+				.transition(background-color @duration ease-in, color @duration ease-in;);
+			}
+		}
+
+		&__nav-item-btn.is-visited {
+			color: @visited;
+			background-color: @visited-inverted;
+		}
+
+		&__nav-item-btn.is-selected {
+			color: @item-color-selected;
+			background-color: @item-color-inverted-selected;
+		}
+	}
 	.gmcq .gmcq__item-inner, .gmcq .gmcq__item, .gmcq .gmcq__item label .gmcq__answer-icon, .gmcq .gmcq__item label.selected .gmcq__item-inner {
 		color: @color-inverted;
+	}
+	.list-with-paragraph {
+		li p {
+				border-left: 5px solid @color-inverted;
+		}
 	}
 	.narrative {
 		&__content {
