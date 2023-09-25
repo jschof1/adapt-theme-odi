@@ -353,29 +353,45 @@ a {
 	}
 }
 
-.selectchoice {
-	&__item {
-		color: black;
-		display:block !important;
-		align-items: center;
-		border-radius: 5px;
-		margin-bottom: 20px;
-	}
-	&__item:not(.selectchoice__item-head) .selectchoice__item-choice-text {
-		display: block !important;
-	}
+// Wrap a div in this to put the text in a gray box
+.callout {
+  margin-top: 1rem;
+  color: black;
+  font-style: italic;
+  background-color: #dddd;
+  padding: 10px;
+}
 
-	&__item-choices {
-		font-weight: bold;
-		padding-top: 10px !important;
+// A nested couple list. Fairly complex
+.boxed-list {
+	border: 1px solid white;
+	ul {
+			padding: 1rem;
+			margin: 1rem;
+			border: 1px solid #d6d6d6;
+			border-radius: 5px;
+			background-color: #fff;
+			color: black;
+			li {
+					margin-left: 1em;
+					border-bottom: none;
+			}
 	}
-	&__item-head {
-		display: none !important;
+	ol {
+			padding: 0;
+			margin: 1rem;
+			list-style-type: none;
+			li {
+					margin-left: 0em;
+
+			}
+			li:not(:last-child) {
+					border-bottom: 1px dashed;
+			}
 	}
-	&__item-text {
-		border-bottom: 2px solid black;
-		padding-bottom: 20px;
-		font-weight: 500;
+	li {
+			line-height: 3;
+			list-style-type: none;
 	}
 }
 

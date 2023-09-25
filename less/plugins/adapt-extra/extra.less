@@ -1,0 +1,26 @@
+.extra__extension {
+	margin-top: 1em;
+	background-color: #dddddd;
+	color: black;
+	border-left: 3px solid;
+	padding: 1rem;
+	&.info {
+	    .extra__item-title-inner::before {
+  		    content: " ⓘ ";
+  		    font-weight: 900;
+  		    font-size: 1.5rem;
+  		    margin-right: .5rem;
+  		    color: black;
+	    }
+	}
+	&.warning {
+	    .extra__item-title-inner::before {
+	        content: "❕";
+            font-weight: 900;
+            margin-right: 0.5rem;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            padding-inline: 0.2rem;
+	    }
+	}
+}

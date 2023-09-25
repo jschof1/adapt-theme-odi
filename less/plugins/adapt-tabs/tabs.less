@@ -1,0 +1,31 @@
+// Apply this class to put the image on the right of the text and not bellow
+.tabs-image-right {
+	.tabs__content-item-inner {
+    	display: flex;
+    	flex-wrap: wrap;
+	}
+	.tabs__content-item-title {
+		position: absolute;
+	}
+	.tabs__content-item-body {
+	    flex: 1; /* Content takes up 50% of the available space */
+	    margin-top: 1em;
+	}
+	.tabs__content-item__image-container {
+		max-width: 50%;
+		margin-left: 10px;
+		min-width: 450px;
+	}
+}
+
+// Apply this class to apply the flex class to any divs with class "column" to make columns
+.tabs-columns {
+	.tabs__content-item-body-inner {
+    	display: flex;
+    	flex-wrap: wrap;
+	}
+	.column {
+		min-width: 300px;
+		flex: 1;
+	}
+}
