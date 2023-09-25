@@ -353,6 +353,33 @@ a {
 	}
 }
 
+// Overrides for selectchoice - doesn't work in plugin folder
+.selectchoice {
+	&__item {
+		color: black;
+		display:block !important;
+		align-items: center;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
+	&__item:not(.selectchoice__item-head) .selectchoice__item-choice-text {
+		display: block !important;
+	}
+
+	&__item-choices {
+		font-weight: bold;
+		padding-top: 10px !important;
+	}
+	&__item-head {
+		display: none !important;
+	}
+	&__item-text {
+		border-bottom: 2px solid black;
+		padding-bottom: 20px;
+		font-weight: 500;
+	}
+}
+
 // Wrap a div in this to put the text in a gray box
 .callout {
   margin-top: 1rem;
