@@ -388,6 +388,41 @@ a {
   background-color: #dddd;
   padding: 10px;
 }
+.callout-white {
+	padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+}
+
+.bordered-list {
+	ul, ol {
+		margin: 1rem 0;
+		padding-left: 2rem;
+		list-style-type: none;
+	}
+	li {
+		margin-top: 10px;
+		list-style-type: none;
+		padding: 0.5em 1em;
+	}
+}
+.bordered-list-shaded {
+	li {
+		margin-top: 10px;
+		display: block;
+  	padding: 10px 15px;
+  	color: #333;
+  	font-weight: bolder;
+	}
+}
+
+.heading-with-rule {
+	font-size: 1.4em;
+	font-weight: bold;
+}
 
 // A nested couple list. Fairly complex
 .boxed-list {
@@ -537,11 +572,30 @@ a {
 	.component__title {
 		color: @font-color;
 	}
+	.heading-with-rule {
+		border-bottom: 1px solid @color;
+		color: @color;
+	}
 
 	.list-with-paragraph {
 		li p {
 				border-left: 5px solid @color;
 		}
+	}
+	.bordered-list {
+		li {
+			border-left: 5px solid @color;
+		}
+	}
+	.bordered-list-shaded {
+		li {
+				background-color: #f7f7f7;
+				border-left: 5px solid @color;
+				color: @font-color;
+				a {
+					color: @font-color;
+				}
+			}
 	}
 	.narrative {
 		&__content {
@@ -673,7 +727,11 @@ a {
 	.block__title {
 		color: @font-color-inverted;
 	}
-    .component__title {
+  .component__title {
+		color: @color-inverted;
+	}
+	.heading-with-rule {
+		border-bottom: 1px solid @color-inverted;
 		color: @color-inverted;
 	}
 	.tabs {
@@ -709,6 +767,21 @@ a {
 		li p {
 				border-left: 5px solid @color-inverted;
 		}
+	}
+	.bordered-list {
+		li {
+			border-left: 5px solid @color-inverted;
+		}
+	}
+	.bordered-list-shaded {
+		li {
+				background-color: @greyDark;
+				border-left: 5px solid @color-inverted;
+				color: @font-color-inverted;
+				a {
+					color: @font-color-inverted;
+				}
+			}
 	}
 	.narrative {
 		&__content {
