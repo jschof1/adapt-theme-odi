@@ -89,7 +89,7 @@
         "_nav" : {
             "nav" : "#333333",
             "nav-inverted" : "#ffffff",
-            "hide-nav" : false,
+            "hide-nav" : true,
             "nav-icon" : "#ffffff",
             "nav-icon-inverted" : "#ffffff",
             "nav-icon-hover" : "#ffffff",

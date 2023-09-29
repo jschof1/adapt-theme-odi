@@ -543,7 +543,7 @@
             "help": "Tick this to hide the navigation icons, used in single page courses.",
             "type": "boolean",
             "inputType": "Boolean",
-            "default": false
+            "default": true
           },
           "nav-icon": {
             "title": "Nav icon colour",
