@@ -29,7 +29,7 @@ define([
       default:
         new ThemeView({ model: new Backbone.Model(theme), el: view.$el });
     }
-    updateLinks();
+    setTimeout(updateLinks, 2000);
   }
 
   function updateLinks() {

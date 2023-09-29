@@ -27,24 +27,26 @@ table {
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 0px !important;
+	color: @font-color;
+	border-collapse: collapse;
+	th, td {
+		padding: 1em;
+		text-align: left;
+		border: 1px solid #ddd;
+	}
+	thead {
+		font-weight: bold;
+		background-color: #f2f2f2;
+	}
+	tbody {
+		background-color: white;
+	}
 }
 .tabs {
 	p {
 		font-size: 0.9em;
 	}
 }
-
-table th,
-table td {
-  padding: 1em;
-  text-align: left;
-}
-
-table th {
-  font-weight: bold;
-}
-
-
 @media (max-width: 768px) {
   table {
     display: block;
@@ -287,9 +289,9 @@ blockquote {
 
 a {
 	color: inherit;
+	text-decoration: none;
 	&.button {
 		padding: 1rem;
-		text-decoration: underline;
 		display: inline-block;
 		margin: 0.2rem;
 	}
@@ -335,6 +337,44 @@ a {
 			position: relative;
 			left: -1rem;
 			padding-left: 1rem;
+	}
+}
+.list-style-none ul {
+	padding-left: 0;
+	margin-top: 1rem;
+	margin-bottom: 0;
+	li {
+			margin-bottom: 0.5rem;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			line-height: 1.5;
+			list-style: none;
+	}
+}
+
+.rag-list-four ul {
+	li:nth-child(1) {
+			background-color: #ffcccc;
+	}
+	li:nth-child(2) {
+			background-color: #ffe5cc;
+	}
+	li:nth-child(3) {
+			background-color: #e6f2ff;
+	}
+	li:nth-child(4) {
+			background-color: #ccffd9;
+	}
+}
+.rag-list-three ul {
+	li:nth-child(1) {
+			background-color: #ffcccc;
+	}
+	li:nth-child(2) {
+			background-color: #ffe5cc;
+	}
+	li:nth-child(3) {
+			background-color: #ccffd9;
 	}
 }
 
@@ -386,7 +426,10 @@ a {
   color: black;
   font-style: italic;
   background-color: #dddd;
-  padding: 10px;
+  padding: 0.5rem;
+	a {
+		color: black !important;
+	}
 }
 .callout-white {
 	padding: 1rem;
@@ -396,7 +439,10 @@ a {
   background-color: #fff;
   color: black;
 }
-
+.padded-callout {
+  margin-top: 2rem;
+  padding: 0.5rem;
+}
 .bordered-list {
 	ul, ol {
 		margin: 1rem 0;
@@ -418,12 +464,16 @@ a {
   	font-weight: bolder;
 	}
 }
-
 .heading-with-rule {
 	font-size: 1.4em;
 	font-weight: bold;
 }
-
+// Create a two column container for things
+.two-item-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
 // A nested couple list. Fairly complex
 .boxed-list {
 	border: 1px solid white;
@@ -562,6 +612,7 @@ a {
 		color: @color-inverted;
 	}
 	a {
+  	border-bottom: 1px dashed @color;
 		&.button {
 			color: @color-inverted;
 		}
@@ -576,7 +627,13 @@ a {
 		border-bottom: 1px solid @color;
 		color: @color;
 	}
-
+	.padded-callout {
+		background-color: @color-inverted;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	}
+	table {
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	}
 	.list-with-paragraph {
 		li p {
 				border-left: 5px solid @color;
@@ -720,6 +777,7 @@ a {
 		color: @color;
 	}
 	a {
+		border-bottom: 1px dashed @color-inverted;
 		&.button {
 			color: @color;
 		}
@@ -782,6 +840,14 @@ a {
 					color: @font-color-inverted;
 				}
 			}
+	}
+	.padded-callout {
+		background-color: @color-inverted;
+		color: @font-color;
+		box-shadow: 0 0 10px rgba(255,255,255,0.4);
+	}
+	table {
+		box-shadow: 0 0 10px rgba(255,255,255,0.4);
 	}
 	.narrative {
 		&__content {
